@@ -1,0 +1,15 @@
+server:
+  port: 9012
+spring:
+  jackson:
+    time-zone: America/Mexico_City
+    locale: es_MX
+  application:
+    name: event-msvc-reports
+  profiles:
+    active: '@profileActive@'
+  cloud:
+    config:
+      enabled: true
+      uri: http://${CONFIG_SERVER_URI:localhost:8888}
+
