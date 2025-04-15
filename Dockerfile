@@ -30,4 +30,4 @@ COPY --from=builder $TARGET_FOLDER/event-msvc-reports-0.0.1-SNAPSHOT.jar .
 #ENV PORT $PORT_APP
 #EXPOSE $PORT
 
-CMD ["java", "-jar", "event-msvc-reports-0.0.1-SNAPSHOT.jar", "--spring.profiles.active=dev"]
+CMD ["java", "-jar", "event-msvc-reports-0.0.1-SNAPSHOT.jar", "--spring.profiles.active=prod"]
