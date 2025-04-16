@@ -23,11 +23,10 @@ WORKDIR /app
 RUN mkdir ./logs
 
 ARG TARGET_FOLDER=/target
+ARG SPROFILE=default
+
+ENV SPROFILE=${SPROFILE}
 
 COPY --from=builder $TARGET_FOLDER/event-msvc-reports-0.0.1-SNAPSHOT.jar .
 
-#ARG PORT_APP=8001
-#ENV PORT $PORT_APP
-#EXPOSE $PORT
-
-CMD ["java", "-jar", "event-msvc-reports-0.0.1-SNAPSHOT.jar", "--spring.profiles.active=prod"]
+CMD java -jar event-msvc-gateway-0.0.1-SNAPSHOT.jar --spring.profiles.active=$SPROFILE
