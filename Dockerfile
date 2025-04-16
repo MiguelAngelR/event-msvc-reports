@@ -29,4 +29,4 @@ ENV SPROFILE=${SPROFILE}
 
 COPY --from=builder $TARGET_FOLDER/event-msvc-reports-0.0.1-SNAPSHOT.jar .
 
-CMD java -jar event-msvc-gateway-0.0.1-SNAPSHOT.jar --spring.profiles.active=$SPROFILE
+CMD java -jar event-msvc-reports-0.0.1-SNAPSHOT.jar --spring.profiles.active=$SPROFILE
